@@ -1,25 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const firstComponent = () => {
+  return <p>Hello</p>
+}
+
+let secondComponent = () => {
+  return <a href="https://reactjs.org">Hello, React!</a>;
+}
+
+let ThirdComponent = () =>{
+  let age = 20;
+  return <FourthComponent myAge = {age}/>
+}
+
+let FourthComponent = (props) =>{
+  return <h4>{props.myAge}</h4>;
+}
+
+let ParentComponent = () =>{
+  let str = "Redev";
+  let obj = {city: "New York"};
+  function band(){
+    return <hr></hr>
+  }
+  let array = [1, 2, 3, 4, 5];
+
+  return <ChildComponent str = {str}
+                        bol = {true}
+                        obj = {obj.city}
+                        func = {band}
+                        array = {array}/>
+}
+
+let ChildComponent = (props) =>{
+  return <div><p>str = {props.str}</p>
+              <p>bool = {props.bol.toString()}</p>
+              <p>obj = {props.obj}</p>
+              <p>function = {props.func()}</p>
+              <p>array = {props.array}</p>
+              </div>
+}
+
+ function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThirdComponent/>
+      <ParentComponent/>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
