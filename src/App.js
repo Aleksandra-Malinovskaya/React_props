@@ -32,12 +32,12 @@ let ParentComponent = () =>{
                         array = {array}/>
 }
 
-let ChildComponent = (props) =>{
-  return <div><p>str = {props.str}</p>
-              <p>bool = {props.bol.toString()}</p>
-              <p>obj = {props.obj}</p>
-              <p>function = {props.func()}</p>
-              <p>array = {props.array}</p>
+let ChildComponent = ({str, bol, obj, func, array}) =>{
+  return <div><p>str = {str}</p>
+              <p>bool = {bol.toString()}</p>
+              <p>obj = {obj}</p>
+              <p>function = {func()}</p>
+              <p>array = {array}</p>
               </div>
 }
 
